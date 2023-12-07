@@ -1,0 +1,25 @@
+.text {
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.primary {
+  font-size: var(--fontsize-primary);
+  color: black;
+}
+
+.secondary {
+  font-size: var(--fontsize-secondary);
+  color: white;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

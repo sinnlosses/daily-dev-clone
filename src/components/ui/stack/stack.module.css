@@ -1,0 +1,151 @@
+.stack {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.directionRow {
+  flex-direction: row;
+}
+
+.directionColumn {
+  flex-direction: column;
+}
+
+.justifyStart {
+  justify-content: start;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyEnd {
+  justify-content: end;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.justifyNormal {
+  justify-content: normal;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.alignItemsEnd {
+  align-items: end;
+}
+
+.alignItemsNormal {
+  align-items: normal;
+}
+
+.paddingLeftXxs {
+  padding-left: var(--spacing-xxs);
+}
+
+.paddingLeftXs {
+  padding-left: var(--spacing-xs);
+}
+
+.paddingLeftS {
+  padding-left: var(--spacing-s);
+}
+
+.paddingLeftM {
+  padding-left: var(--spacing-m);
+}
+
+.paddingLeftL {
+  padding-left: var(--spacing-l);
+}
+
+.paddingLeftXl {
+  padding-left: var(--spacing-xl);
+}
+
+.paddingLeftXxl {
+  padding-left: var(--spacing-xxl);
+}
+
+.paddingLeftNone {
+  padding-left: 0;
+}
+
+.paddingRightXxs {
+  padding-right: var(--spacing-xxs);
+}
+
+.paddingRightXs {
+  padding-right: var(--spacing-xs);
+}
+
+.paddingRightS {
+  padding-right: var(--spacing-s);
+}
+
+.paddingRightM {
+  padding-right: var(--spacing-m);
+}
+
+.paddingRightL {
+  padding-right: var(--spacing-l);
+}
+
+.paddingRightXl {
+  padding-right: var(--spacing-xl);
+}
+
+.paddingRightXxl {
+  padding-right: var(--spacing-xxl);
+}
+
+.paddingRightNone {
+  padding-right: 0;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.gapXxs {
+  gap: var(--spacing-xxs);
+}
+
+.gapXs {
+  gap: var(--spacing-xs);
+}
+
+.gapS {
+  gap: var(--spacing-s);
+}
+
+.gapM {
+  gap: var(--spacing-m);
+}
+
+.gapL {
+  gap: var(--spacing-l);
+}
+
+.gapXl {
+  gap: var(--spacing-xl);
+}
+
+.gapXxl {
+  gap: var(--spacing-xxl);
+}
+
+.gapNone {
+  gap: 0;
+}

@@ -1,0 +1,12 @@
+.primary :global(.react-select__container) {
+  width: 100%;
+  max-width: 150px;
+}
+
+.primary :global(.react-select__control) {
+  height: 50px;
+}
+
+.primary:hover :global(.react-select__control) {
+  border-color: var(--color-border);
+}
