@@ -4,11 +4,11 @@
     "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
     "Courier New", monospace;
 
-  --foreground-rgb: #000;
-  --background-rgb: #ddeefc;
-
-  --fontsize-primary: 18px;
-  --fontsize-secondary: 14px;
+  --font-size-root: 16px;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
 
   --spacing-xxs: 4px;
   --spacing-xs: 8px;
@@ -17,8 +17,16 @@
   --spacing-l: 32px;
   --spacing-xl: 40px;
   --spacing-xxl: 48px;
+}
 
-  --color-border: #3d9cff;
+:root[data-theme="light"] {
+  --theme-primary: #000;
+  --theme-background: #fff;
+}
+
+:root[data-theme="dark"] {
+  --theme-primary: #fff;
+  --theme-background: #0e1217;
 }
 
 * {
@@ -34,6 +42,7 @@ body {
 }
 
 body {
-  color: var(--foreground-rgb);
-  background: var(--background-rgb);
+  font-size: var(--font-size-root);
+  color: var(--theme-primary);
+  background: var(--theme-background);
 }
