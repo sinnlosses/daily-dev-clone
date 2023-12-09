@@ -7,12 +7,10 @@
 
 .primary {
   font-size: var(--fontsize-primary);
-  color: black;
 }
 
 .secondary {
   font-size: var(--fontsize-secondary);
-  color: white;
 }
 
 .bold {

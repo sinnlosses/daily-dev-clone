@@ -1,3 +1,11 @@
+import { Home } from "@/features/home"
+import { useThemeContext } from "@/providers/theme/theme-provider"
+
 export function TopPresenter() {
-  return <>{/* TODO: implement */}</>
+  const { isDarkMode, toggleTheme } = useThemeContext()
+  return (
+    <>
+      <Home />
+    </>
+  )
 }
