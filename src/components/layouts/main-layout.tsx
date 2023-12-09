@@ -1,6 +1,6 @@
+import { AppProvider } from "@/providers"
 import { Inter } from "next/font/google"
 import { PropsWithChildren } from "react"
-import { AppProvider } from "@/providers"
 import styles from "./main-layout.module.css"
 
 const inter = Inter({ subsets: ["latin"] })

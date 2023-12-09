@@ -1,6 +1,6 @@
 "use client"
 import { PropsWithChildren, createContext, useContext, useEffect } from "react"
-import { Theme, UseThemeReturn, useTheme } from "./useTheme"
+import { Theme, UseThemeReturn, useTheme } from "./use-theme"
 
 const ThemeContext = createContext<UseThemeReturn | undefined>(undefined)
 
