@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react"
-import { ThemeProvider } from "./theme-provider"
+import { ThemeProvider } from "./theme/theme-provider"
 import { ToasterProvider } from "./toaster-provider"
 
 type AppProviderProps = PropsWithChildren
