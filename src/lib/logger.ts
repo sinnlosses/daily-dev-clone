@@ -1,39 +1,38 @@
-import type { Logger } from "winston"
-import winston from "winston"
+import pino from "pino"
 
-const logger: Logger = winston.createLogger({
-  format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({
-      filename: "application-log/combined.log",
-    }),
-    new winston.transports.File({
-      filename: "application-log/error.log",
-      level: "error",
-    }),
-  ],
-})
-
-const logInfo = (message: string): void => {
-  logger.info({
-    message,
-  })
+type Option = {
+  caller: string
+  status: number
 }
 
-const logError = (error: Error): void => {
-  logger.error({
-    message: error.message,
-    stack: error.stack,
-  })
+const pinoConfig = {
+  formatters: {
+    level: (label: string) => {
+      return {
+        level: label,
+      }
+    },
+  },
+  timestamp: pino.stdTimeFunctions.isoTime,
+  browser: {
+    asObject: true,
+  },
 }
 
-// if (process.env.NODE_ENV !== 'production') {
-//   logger.add(
-//     new winston.transports.Console({
-//       format: winston.format.simple(),
-//     })
-//   );
-// }
+const logger = pino(pinoConfig)
 
-export { logError, logInfo }
+export const loggerError = (message: string) => {
+  return logger.error(message)
+}
+
+export const loggerWarn = (message: string) => {
+  return logger.warn(message)
+}
+
+export const loggerInfo = (message: string) => {
+  return logger.info(message)
+}
+
+export const loggerDebug = (message: string) => {
+  return logger.debug(message)
+}
