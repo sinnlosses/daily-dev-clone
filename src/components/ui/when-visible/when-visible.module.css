@@ -1,0 +1,15 @@
+.container {
+  display: none;
+}
+
+@media screen and (min-width: 1020px) {
+  .desktop {
+    display: contents;
+  }
+}
+
+@media screen and (max-width: 1019px) {
+  .mobile {
+    display: contents;
+  }
+}

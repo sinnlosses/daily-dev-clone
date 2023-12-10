@@ -1,1 +1,2 @@
-// 汎用hooks
+export * from "./useConfig"
+export * from "./useMediaQuery"
