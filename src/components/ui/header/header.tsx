@@ -1,7 +1,7 @@
 "use client"
 import { HamburgerIcon } from "@/components/ui/icons"
-import { Text } from "@/components/ui/text"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./header.module.css"
 
 export function Header() {
@@ -10,10 +10,9 @@ export function Header() {
       <button className={styles.button}>
         <HamburgerIcon />
       </button>
-      <div className={styles.imageContainer}>
-        <Image src={"/dolphin.png"} width={30} height={30} alt="logo" />
-        <Text>Dolphin</Text>
-      </div>
+      <Link href={"/"} className={styles.link}>
+        <Image src={"/dolphin.png"} width={100} height={30} alt="logo" />
+      </Link>
     </header>
   )
 }

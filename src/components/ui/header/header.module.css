@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -7,12 +8,13 @@
   z-index: 4;
   border-bottom: solid var(--divider-tertiary);
   background-color: inherit;
-  padding: var(--spacing-xs) var(--spacing-s);
+  padding: var(--spacing-xs) var(--spacing-l);
 
   @media screen and (min-width: 1020px) {
     justify-content: space-between;
     position: sticky;
     top: 0;
+    padding: var(--spacing-xs) var(--spacing-s);
   }
 }
 
@@ -24,16 +26,19 @@
   border-radius: 10px;
   background-color: #ffffff00;
   transition: background-color 0.3s;
+
+  @media screen and (min-width: 1020px) {
+  }
 }
 
 .button:hover {
   background-color: #ffffff20;
 }
 
-.imageContainer {
+.link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
   gap: var(--spacing-xxs);
 }
