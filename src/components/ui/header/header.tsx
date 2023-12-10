@@ -11,7 +11,7 @@ export function Header() {
         <HamburgerIcon />
       </button>
       <Link href={"/"} className={styles.link}>
-        <Image src={"/dolphin.png"} width={100} height={30} alt="logo" />
+        <Image src={"/dolphin.png"} width={100} height={30} alt="logo" priority />
       </Link>
     </header>
   )
