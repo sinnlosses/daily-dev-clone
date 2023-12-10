@@ -3,7 +3,7 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  padding: 50px 15px;
+  position: relative;
+  left: 240px;
+  padding: var(--spacing-xl) var(--spacing-4xl);
 }
