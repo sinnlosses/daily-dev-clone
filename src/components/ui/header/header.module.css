@@ -1,7 +1,7 @@
 .header {
   position: relative;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   height: 56px;
   width: 100%;
@@ -41,4 +41,9 @@
   transform: translateX(-50%);
   display: flex;
   gap: var(--spacing-xxs);
+
+  @media screen and (min-width: 1020px) {
+    position: static;
+    transform: translateX(0);
+  }
 }
