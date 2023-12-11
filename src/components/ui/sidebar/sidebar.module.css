@@ -4,6 +4,7 @@
   left: 0;
   bottom: 0;
   width: 240px;
+  padding: var(--spacing-l) 0 var(--spacing-s);
   overflow-y: scroll;
   border-right: solid 1px var(--divider-tertiary);
   /* スクロールバー非表示(Edge) */
@@ -15,4 +16,26 @@
 .aside::-webkit-scrollbar {
   /* スクロールバー非表示(Safari) */
   display: none;
+}
+
+.category {
+  font-size: 13px;
+  font-weight: bold;
+  color: #a8b3cfa3;
+  padding-left: var(--spacing-s);
+}
+
+.item {
+  height: var(--length-l);
+  color: #a8b3cf;
+}
+
+.item:hover {
+  background-color: #a8b3cf33;
+  color: #fff;
+}
+
+.itemLink {
+  font-size: 15px;
+  text-decoration: none;
 }

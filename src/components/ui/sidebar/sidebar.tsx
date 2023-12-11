@@ -1,53 +1,27 @@
+import { HStack } from "@/components/ui/hstack"
+import { GearIcon } from "@/components/ui/icons"
+import { VStack } from "@/components/ui/vstack"
+import Link from "next/link"
 import styles from "./sidebar.module.css"
 
 export function Sidebar() {
   return (
     <aside className={styles.aside}>
-      <div className={styles.asideInner}>
-        <p>sidebar content1</p>
-        <p>sidebar content2</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-        <p>sidebar content</p>
-      </div>
+      <VStack gap="l">
+        {Array.from(Array(15)).map((i) => {
+          return (
+            <VStack key={i} gap="s">
+              <p className={styles.category}>Manage</p>
+              <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
+                <GearIcon />
+                <Link href="/" className={styles.itemLink}>
+                  Customize
+                </Link>
+              </HStack>
+            </VStack>
+          )
+        })}
+      </VStack>
     </aside>
   )
 }

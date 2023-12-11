@@ -10,12 +10,12 @@ type WhenVisibleProps = {
 /**
  * ref: https://havelog.aho.mu/develop/css/e789-display-contents-utility-component.html
  */
-export const WhenVisible = ({
+export function WhenVisible({
   mobile = false,
   tablet = false,
   desktop = false,
   children,
-}: PropsWithChildren<WhenVisibleProps>) => {
+}: PropsWithChildren<WhenVisibleProps>) {
   const classNames = [
     styles.container,
     mobile ? styles.mobile : "",
