@@ -1,0 +1,10 @@
+.dialog {
+  position: fixed;
+  top: var(--length-xxxl);
+  left: 50%;
+  transform: translateX(-50%);
+  height: 640px;
+  width: 420px;
+  background-color: blueviolet;
+  z-index: 0;
+}
