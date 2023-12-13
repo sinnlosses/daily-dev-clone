@@ -5,6 +5,29 @@
   transform: translateX(-50%);
   height: 640px;
   width: 420px;
-  background-color: blueviolet;
+  background-color: #0e1217;
+  border-color: var(--divider-tertiary);
+  border-radius: 20px;
+  outline: none;
   z-index: 0;
+}
+
+.dialog::backdrop {
+  background: #5f37e93d;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+.contentHeader {
+  height: var(--length-xxxl);
+  border-bottom: solid 1px var(--divider-tertiary);
+}
+
+.dialogTitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
 }

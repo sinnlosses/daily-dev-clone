@@ -3,19 +3,19 @@ import { Dialog } from "@/components/ui/dialog"
 import { HStack } from "@/components/ui/hstack"
 import { GearIcon } from "@/components/ui/icons"
 import { VStack } from "@/components/ui/vstack"
-import { useRef } from "react"
+import { useDialog } from "@/hooks/useDialog"
 import styles from "./sidebar.module.css"
 
 export function Sidebar() {
-  const dialogRef = useRef<HTMLDialogElement>(null)
+  const { ref: dialogRef, showModal, closeModal } = useDialog()
   const handleClick = () => {
     console.log("ダイアログオープン")
-    dialogRef.current!.show()
+    showModal()
   }
 
   const handleCloseClick = () => {
     console.log("ダイアログクローズ")
-    dialogRef.current?.close()
+    closeModal()
   }
 
   return (
@@ -42,7 +42,9 @@ export function Sidebar() {
           </button>
         </HStack>
       </VStack>
-      <Dialog ref={dialogRef} />
+      <Dialog title="Customize" ref={dialogRef} onClose={closeModal}>
+        <p>Hello</p>
+      </Dialog>
     </aside>
   )
 }

@@ -41,11 +41,13 @@
 :root[data-theme="light"] {
   --theme-primary: #000;
   --theme-background: #fff;
+  --button-default-color: #a8b3cf66;
 }
 
 :root[data-theme="dark"] {
   --theme-primary: #fff;
   --theme-background: #0e1217;
+  --button-default-color: #a8b3cf;
 }
 
 * {

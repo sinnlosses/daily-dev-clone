@@ -7,8 +7,10 @@ export type StackProps = PropsWithChildren<{
   direction: "row" | "column"
   justify?: "start" | "center" | "end" | "spaceBetween" | "normal"
   alignItems?: "start" | "center" | "end" | "normal"
-  paddingLeft?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none"
+  paddingTop?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none"
   paddingRight?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none"
+  paddingBottom?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none"
+  paddingLeft?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "none"
   wrap?: boolean
   fullWidth?: boolean
   fullHeight?: boolean
@@ -25,8 +27,10 @@ export function Stack(props: StackProps) {
         styles[`direction${capitalize(props.direction)}`],
         styles[`justify${capitalize(props.justify ?? "normal")}`],
         styles[`alignItems${capitalize(props.alignItems ?? "normal")}`],
-        styles[`paddingLeft${capitalize(props.paddingLeft ?? "none")}`],
+        styles[`paddingTop${capitalize(props.paddingTop ?? "none")}`],
         styles[`paddingRight${capitalize(props.paddingRight ?? "none")}`],
+        styles[`paddingBottom${capitalize(props.paddingBottom ?? "none")}`],
+        styles[`paddingLeft${capitalize(props.paddingLeft ?? "none")}`],
         props.wrap && styles.wrap,
         props.fullWidth && styles.fullWidth,
         props.fullHeight && styles.fullHeight,
