@@ -27,8 +27,11 @@ export const Dialog: FC<DialogProps> = forwardRef<HTMLDialogElement, DialogProps
               className={styles.contentHeader}
             >
               <p className={styles.dialogTitle}>{title}</p>
-              <CrossIcon />
+              <div className={styles.crossIcon} onClick={onClose}>
+                <CrossIcon />
+              </div>
             </HStack>
+            {children}
           </VStack>
         </div>
       </dialog>

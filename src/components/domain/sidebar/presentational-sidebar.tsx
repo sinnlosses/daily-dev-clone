@@ -12,16 +12,6 @@ type SidebarProps = {
 
 export const PresentationalSidebar = forwardRef<HTMLDialogElement, SidebarProps>(
   ({ showModal, closeModal }, dialogRef) => {
-    const handleClick = () => {
-      console.log("ダイアログオープン")
-      showModal()
-    }
-
-    const handleCloseClick = () => {
-      console.log("ダイアログクローズ")
-      closeModal()
-    }
-
     return (
       <aside className={styles.aside}>
         <VStack gap="l">
@@ -31,7 +21,7 @@ export const PresentationalSidebar = forwardRef<HTMLDialogElement, SidebarProps>
                 <p className={styles.category}>Manage</p>
                 <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
                   <GearIcon />
-                  <button onClick={handleClick} className={styles.itemButton}>
+                  <button onClick={showModal} className={styles.itemButton}>
                     Customize
                   </button>
                 </HStack>
@@ -41,7 +31,7 @@ export const PresentationalSidebar = forwardRef<HTMLDialogElement, SidebarProps>
           <p className={styles.category}>Manage</p>
           <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
             <GearIcon />
-            <button onClick={handleCloseClick} className={styles.itemButton}>
+            <button onClick={closeModal} className={styles.itemButton}>
               Close
             </button>
           </HStack>
