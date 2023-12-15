@@ -1,54 +1,7 @@
-import { UseTopPageReturnType } from "@/stores/top/use-top-page"
-import styles from "./top.module.css"
+import { useTopPage } from "@/features/top/hooks/use-top-page"
+import { TopPage } from "./top.page"
 
-type TopProps = UseTopPageReturnType
-export const Top: React.FC<TopProps> = ({}: UseTopPageReturnType) => {
-  return (
-    <div className={styles.home}>
-      <p>12456789124567891245678912456789124567891245678912456789</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-      <p>1</p>
-    </div>
-  )
+export const Top = () => {
+  const useTopPageReturn = useTopPage()
+  return <TopPage {...useTopPageReturn} />
 }

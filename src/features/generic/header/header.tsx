@@ -1,4 +1,4 @@
-import { PresentationalHeader } from "@/components/domain/header/presentational-header"
+import { PresentationalHeader } from "@/features/generic/header/presentational-header"
 import { useConfig } from "@/hooks"
 
 export const Header = () => {

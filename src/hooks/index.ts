@@ -1,2 +1,2 @@
-export * from "./useConfig"
-export * from "./useMediaQuery"
+export * from "./use-config"
+export * from "./use-media-query"
