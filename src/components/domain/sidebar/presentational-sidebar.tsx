@@ -1,6 +1,6 @@
-import { Dialog } from "@/components/ui/dialog"
 import { HStack } from "@/components/ui/hstack"
 import { GearIcon } from "@/components/ui/icons"
+import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
 import { forwardRef } from "react"
 import styles from "./sidebar.module.css"
@@ -15,30 +15,20 @@ export const PresentationalSidebar = forwardRef<HTMLDialogElement, SidebarProps>
     return (
       <aside className={styles.aside}>
         <VStack gap="l">
-          {Array.from(Array(5)).map((i) => {
+          {Array.from(Array(5)).map((_, index) => {
             return (
-              <VStack key={i} gap="s">
+              <VStack key={index} gap="s">
                 <p className={styles.category}>Manage</p>
-                <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
-                  <GearIcon />
-                  <button onClick={showModal} className={styles.itemButton}>
-                    Customize
-                  </button>
-                </HStack>
+                <button className={styles.item} onClick={showModal}>
+                  <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
+                    <GearIcon />
+                    <Text>Customize</Text>
+                  </HStack>
+                </button>
               </VStack>
             )
           })}
-          <p className={styles.category}>Manage</p>
-          <HStack alignItems="center" paddingLeft="s" gap="s" className={styles.item}>
-            <GearIcon />
-            <button onClick={closeModal} className={styles.itemButton}>
-              Close
-            </button>
-          </HStack>
         </VStack>
-        <Dialog title="Customize" ref={dialogRef} onClose={closeModal}>
-          <p>Hello</p>
-        </Dialog>
       </aside>
     )
   }

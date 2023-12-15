@@ -27,15 +27,14 @@
 
 .item {
   height: var(--length-l);
-  color: #a8b3cf;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--button-default-color);
+  font-size: 15px;
 }
 
 .item:hover {
-  background-color: #a8b3cf33;
   color: #fff;
-}
-
-.itemButton {
-  font-size: 15px;
-  text-decoration: none;
+  background-color: var(--button-default-color-hover);
 }

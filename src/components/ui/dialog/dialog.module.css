@@ -4,7 +4,8 @@
   left: 50%;
   transform: translateX(-50%);
   height: 640px;
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   background-color: #0e1217;
   border-color: var(--divider-tertiary);
   border-radius: 20px;
@@ -16,38 +17,7 @@
   background: #5f37e93d;
 }
 
-.content {
+.dialogInner {
   width: 100%;
   height: 100%;
-}
-
-.contentHeader {
-  position: relative;
-  height: var(--length-xxxl);
-  border-bottom: solid 1px var(--divider-tertiary);
-}
-
-.dialogTitle {
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.crossIcon {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  transform: translateY(-50%);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.crossIcon:hover {
-  background-color: #ffffff15;
-  transition: 0.3s;
 }
