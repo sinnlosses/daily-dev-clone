@@ -4,7 +4,6 @@ import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
 import { forwardRef } from "react"
 import styles from "./sidebar.module.css"
-
 type SidebarProps = {
   showModal: () => void
   closeModal: () => void
