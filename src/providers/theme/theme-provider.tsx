@@ -4,12 +4,18 @@ import { useThemeProvider } from "@/providers/theme/use-theme-provider"
 import { PropsWithChildren, useEffect } from "react"
 
 export function ThemeProvider(props: PropsWithChildren) {
-  const { context, setTheme } = useThemeProvider()
+  const { context, getThemeFromLocalStorage, setTheme } = useThemeProvider()
 
   useEffect(() => {
     const root = window.document.documentElement
     const initialColorValue = root.getAttribute("data-theme")
-    setTheme(initialColorValue as Theme)
+    const maybeSavedTheme = getThemeFromLocalStorage()
+    if (maybeSavedTheme && maybeSavedTheme === "auto") {
+      setTheme("auto")
+    } else {
+      setTheme(initialColorValue as Theme)
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
