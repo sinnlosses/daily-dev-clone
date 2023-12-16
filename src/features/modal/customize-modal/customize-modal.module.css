@@ -1,0 +1,5 @@
+.category {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--font-color-secondary);
+}

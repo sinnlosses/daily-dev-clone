@@ -1,0 +1,25 @@
+.radioItem {
+  cursor: pointer;
+}
+
+.radioInput {
+  cursor: inherit;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  border: 3px solid var(--border-color-primary);
+  accent-color: #900dcf;
+}
+
+.radioInput:checked {
+  border: 3px solid #be48eb;
+  background-color: #900dcf;
+}
+
+.radioLabel {
+  cursor: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--font-color-secondary);
+}

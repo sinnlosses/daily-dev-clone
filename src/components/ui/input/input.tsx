@@ -14,22 +14,30 @@ type InputProps = {
   onBlur?: () => void
 }
 
-export function Input(props: InputProps) {
-  return (
-    <input
-      type="text"
-      value={props.value}
-      className={clsx(
-        styles.text,
-        styles[`${props.variant ?? "primary"}`],
-        styles[`width${capitalize(props.width ?? "auto")}`],
-        props.className
-      )}
-      inputMode={props.inputMode}
-      pattern={props.pattern}
-      onChange={(e) => props.onChange(e.target.value)}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-    />
-  )
-}
+export const Input = ({
+  variant,
+  value,
+  width,
+  className,
+  inputMode,
+  pattern,
+  onChange,
+  onFocus,
+  onBlur,
+}: InputProps) => (
+  <input
+    type="text"
+    value={value}
+    className={clsx(
+      styles.text,
+      styles[`${variant ?? "primary"}`],
+      styles[`width${capitalize(width ?? "auto")}`],
+      className
+    )}
+    inputMode={inputMode}
+    pattern={pattern}
+    onChange={(e) => onChange(e.target.value)}
+    onFocus={onFocus}
+    onBlur={onBlur}
+  />
+)

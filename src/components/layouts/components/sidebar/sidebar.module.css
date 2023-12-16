@@ -21,7 +21,7 @@
 .category {
   font-size: 13px;
   font-weight: bold;
-  color: #a8b3cfa3;
+  color: var(--font-color-secondary);
   padding-left: var(--spacing-s);
 }
 
