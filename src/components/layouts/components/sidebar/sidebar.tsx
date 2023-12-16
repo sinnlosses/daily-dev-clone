@@ -1,7 +1,7 @@
-import { useDialog } from "@/hooks/use-dialog"
+import { useCustomizeModal } from "@/features/modal/customize-modal/hooks/use-customize-modal"
 import { PresentationalSidebar } from "./presentational-sidebar"
 
 export const Sidebar = () => {
-  const useDialogReturn = useDialog()
-  return <PresentationalSidebar {...useDialogReturn} />
+  const useCustomizeModalReturnType = useCustomizeModal()
+  return <PresentationalSidebar {...useCustomizeModalReturnType} />
 }

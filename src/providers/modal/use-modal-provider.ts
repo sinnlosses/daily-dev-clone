@@ -1,4 +1,4 @@
-import { ModalContextType, ShowModal } from "@/providers/modal/modal-context"
+import { type ModalContextType, type SetRenderer } from "@/providers/modal/modal-context"
 import { useCallback, useMemo, useState } from "react"
 
 export type UseModalProviderReturnType = {
@@ -7,31 +7,24 @@ export type UseModalProviderReturnType = {
 }
 
 export function useModalProvider(): UseModalProviderReturnType {
-  const [renderer, setRenderer] = useState<{ fn: () => React.ReactNode }>({
+  const [renderer, _setRenderer] = useState<{ fn: () => React.ReactNode | null }>({
     fn: () => null,
   })
 
-  const [visible, setVisible] = useState(false)
-
-  const showModal = useCallback<ShowModal>(
-    ({ render }) => {
-      setRenderer({ fn: render })
-      setVisible(true)
-    },
-    [setVisible]
-  )
-
-  const closeModal = useCallback(() => setVisible(false), [])
+  const setRenderer = useCallback<SetRenderer>(({ render }) => {
+    _setRenderer({ fn: render })
+  }, [])
 
   const context = useMemo<ModalContextType>(
     () => ({
-      showModal,
-      closeModal,
+      setRenderer,
     }),
-    [showModal, closeModal]
+    [setRenderer]
   )
 
-  const renderModal = useCallback(() => (visible ? renderer.fn() : null), [visible, renderer])
+  const renderModal = useCallback(() => {
+    return renderer.fn()
+  }, [renderer])
 
   return { context, renderModal }
 }

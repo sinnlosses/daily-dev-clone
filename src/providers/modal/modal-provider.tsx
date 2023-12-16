@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react"
 
 export const ModalProvider = ({ children }: PropsWithChildren) => {
   const { context, renderModal } = useModalProvider()
+
   return (
     <ModalContext.Provider value={context}>
       {children}
