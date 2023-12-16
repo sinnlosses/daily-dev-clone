@@ -44,6 +44,9 @@
   --button-default-color: #a8b3cf66;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf66;
+  --font-color-primary: #000;
+  --font-color-secondary: #a8b3cf66;
+  --border-color-primary: #a8b3cf;
 }
 
 :root[data-theme="dark"] {
@@ -52,6 +55,9 @@
   --button-default-color: #a8b3cf;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf;
+  --font-color-primary: #fff;
+  --font-color-secondary: #a8b3cf;
+  --border-color-primary: #a8b3cf;
 }
 
 * {
