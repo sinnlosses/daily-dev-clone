@@ -1,8 +1,7 @@
 import { PresentationalCustomizeModal } from "@/features/modal/customize-modal"
 import { useDialog } from "@/hooks/use-dialog"
-import { Theme, useTheme } from "@/hooks/use-theme"
-import { ModalContext } from "@/providers/modal/modal-context"
-import { useContext } from "react"
+import { useTheme } from "@/hooks/use-theme"
+import { Theme } from "@/providers/theme/theme-context"
 
 export type UseCustomizeModalReturnType = {
   theme: Theme
@@ -12,22 +11,17 @@ export type UseCustomizeModalReturnType = {
 
 export function useCustomizeModal(): UseCustomizeModalReturnType {
   const { theme, setTheme } = useTheme()
-
   const { ref, showModal: _showModal, closeModal } = useDialog()
-  const { setRenderer } = useContext(ModalContext)
-  const showModal = () => {
-    setRenderer({
-      render: () => (
-        <PresentationalCustomizeModal
-          ref={ref}
-          theme={theme}
-          setTheme={setTheme}
-          onClose={closeModal}
-        />
-      ),
-    })
-    _showModal()
-  }
+
+  const showModal = () =>
+    _showModal(() => (
+      <PresentationalCustomizeModal
+        ref={ref}
+        theme={theme}
+        setTheme={setTheme}
+        onClose={closeModal}
+      />
+    ))
 
   return { theme, setTheme, showModal }
 }

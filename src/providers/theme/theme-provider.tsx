@@ -1,24 +1,20 @@
 "use client"
-import { PropsWithChildren, createContext, useContext, useEffect } from "react"
-import { Theme, UseThemeReturn, useTheme } from "./use-theme"
-
-const ThemeContext = createContext<UseThemeReturn | undefined>(undefined)
-
-export function useThemeContext(): UseThemeReturn {
-  return useContext(ThemeContext)!
-}
+import { Theme, ThemeContext } from "@/providers/theme/theme-context"
+import { useThemeProvider } from "@/providers/theme/use-theme-provider"
+import { PropsWithChildren, useEffect } from "react"
 
 export function ThemeProvider(props: PropsWithChildren) {
-  const { isDarkMode, toggleTheme, setTheme } = useTheme()
+  const { context, setTheme } = useThemeProvider()
 
   useEffect(() => {
     const root = window.document.documentElement
     const initialColorValue = root.getAttribute("data-theme")
     setTheme(initialColorValue as Theme)
-  }, [setTheme])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme, setTheme }}>
+    <ThemeContext.Provider value={context}>
       <script
         // body のレンダリング前にテーマを設定しておくことで表示直後のちらつきを防ぐ
         // ref: https://zenn.dev/minguu42/articles/20220113-nextjs-darkmode
@@ -26,7 +22,7 @@ export function ThemeProvider(props: PropsWithChildren) {
           __html: `!function(){
               let theme;
               const storageTheme = window.localStorage.getItem("theme");
-              if (storageTheme !== null) {
+              if (storageTheme !== null && storageTheme !== "auto") {
                 theme = storageTheme;
               } else {
                 const mql = window.matchMedia("(prefers-color-scheme: dark)");
