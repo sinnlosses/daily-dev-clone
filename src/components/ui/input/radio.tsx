@@ -11,7 +11,7 @@ export type RadioItem<T> = {
 type RadioProps<T> = {
   variant: "vertical" | "horizontal"
   options: RadioItem<T>[]
-  value: T
+  current: T
   radioClassName?: string
   labelClassName?: string
   onChange: (value: T) => void
@@ -20,7 +20,7 @@ type RadioProps<T> = {
 export const Radio = <T,>({
   variant,
   options,
-  value,
+  current,
   radioClassName,
   labelClassName,
   onChange,
@@ -29,13 +29,16 @@ export const Radio = <T,>({
     <Stack direction={variant === "horizontal" ? "row" : "column"} key={option.value as string}>
       <HStack justify="start" alignItems="center" gap="s" className={styles.radioItem}>
         <input
+          id={option.value as string}
           type="radio"
           value={option.value as string}
           className={clsx(styles.radioInput, radioClassName)}
           onChange={(e) => onChange(e.target.value as T)}
-          checked={option.value === value}
+          checked={option.value === current}
         />
-        <label className={clsx(styles.radioLabel, labelClassName)}>{option.label}</label>
+        <label htmlFor={option.value as string} className={clsx(styles.radioLabel, labelClassName)}>
+          {option.label}
+        </label>
       </HStack>
     </Stack>
   ))

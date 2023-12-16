@@ -11,9 +11,9 @@ export function useThemeProvider(): UseThemeProviderReturnType {
   const [theme, _setTheme] = useState<Theme>("auto")
   const setTheme = useCallback(
     (newTheme: Theme) => {
+      loggerInfo(`provider:: theme: ${theme}, newTheme: ${newTheme}`)
       if (theme === newTheme) return
 
-      loggerInfo(`provider:: theme: ${theme}, newTheme: ${newTheme}`)
       _setTheme(newTheme)
 
       window.localStorage.setItem("theme", newTheme)

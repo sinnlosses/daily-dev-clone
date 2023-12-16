@@ -4,9 +4,8 @@ import { DialogHeader } from "@/components/ui/dialog/dialog-header"
 import { Radio } from "@/components/ui/input"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
-import { loggerInfo } from "@/lib"
 import { Theme } from "@/providers/theme/theme-context"
-import { FC, Ref, forwardRef, useEffect } from "react"
+import { FC, Ref, forwardRef } from "react"
 import styles from "./customize-modal.module.css"
 
 type PresentationalCustomizeModalProps = {
@@ -20,9 +19,6 @@ export const PresentationalCustomizeModal: FC<PresentationalCustomizeModalProps>
   HTMLDialogElement,
   PresentationalCustomizeModalProps
 >(({ theme, setTheme, onClose }, ref) => {
-  useEffect(() => {
-    loggerInfo(`useEffect: theme: ${theme}`)
-  }, [theme])
   return (
     <Dialog ref={ref} onClose={onClose}>
       <DialogHeader title="Customize" onClose={onClose} />
@@ -37,7 +33,7 @@ export const PresentationalCustomizeModal: FC<PresentationalCustomizeModalProps>
                 { value: "dark", label: "Dark" },
                 { value: "auto", label: "Auto" },
               ]}
-              value={theme}
+              current={theme}
               onChange={setTheme}
             ></Radio>
           </VStack>

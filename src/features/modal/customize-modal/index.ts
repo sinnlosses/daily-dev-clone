@@ -1,1 +1,1 @@
-export * from "./presentational-customize-modal"
+export * from "./customize-modal"
