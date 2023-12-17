@@ -15,9 +15,7 @@ export function ThemeProvider(props: PropsWithChildren) {
     } else {
       setTheme(initialColorValue as Theme)
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [getThemeFromLocalStorage, setTheme])
 
   return (
     <ThemeContext.Provider value={context}>

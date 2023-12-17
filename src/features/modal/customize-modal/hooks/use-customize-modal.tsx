@@ -1,5 +1,5 @@
 import { CustomizeModal } from "@/features/modal/customize-modal"
-import { useDialog } from "@/hooks/use-dialog"
+import { useDialog } from "@/hooks/modal/use-dialog"
 
 export type UseCustomizeModalReturnType = {
   showModal: () => void
