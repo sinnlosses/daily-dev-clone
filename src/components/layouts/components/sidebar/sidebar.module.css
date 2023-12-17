@@ -1,21 +1,36 @@
-.aside {
+.sidebar {
   position: fixed;
   top: var(--length-xxxl);
   left: 0;
   bottom: 0;
   width: 240px;
-  padding: var(--spacing-l) 0 var(--spacing-s);
-  overflow-y: scroll;
   border-right: solid 1px var(--divider-tertiary);
+  z-index: 7;
+}
+
+.contents {
+  height: 100%;
+  overflow-y: scroll;
+  padding: var(--spacing-l) 0 var(--spacing-s);
   /* スクロールバー非表示(Edge) */
   -ms-overflow-steyle: none;
   /* スクロールバー非表示(Chrome) */
   scrollbar-width: none;
 }
 
-.aside::-webkit-scrollbar {
+.contents::-webkit-scrollbar {
   /* スクロールバー非表示(Safari) */
   display: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: 50px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  z-index: -3;
 }
 
 .category {

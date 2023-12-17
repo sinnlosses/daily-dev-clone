@@ -17,7 +17,7 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
       <body className={clsx(inter.className, styles.body)}>
         <AppProvider>
           <Header />
-          <HStack>
+          <HStack className={styles.mainContainer}>
             <WhenVisible desktop>
               <Sidebar />
             </WhenVisible>

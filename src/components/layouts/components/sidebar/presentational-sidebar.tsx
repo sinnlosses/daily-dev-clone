@@ -9,9 +9,10 @@ type SidebarProps = UseCustomizeModalReturnType
 
 export const PresentationalSidebar = ({ showModal }: SidebarProps) => {
   return (
-    <aside className={styles.aside}>
-      <VStack gap="l">
-        {Array.from(Array(5)).map((_, index) => {
+    <aside className={styles.sidebar}>
+      <button onClick={() => console.log("OK")} className={styles.closeButton}></button>
+      <VStack gap="l" className={styles.contents}>
+        {Array.from(Array(10)).map((_, index) => {
           return (
             <VStack key={index} gap="s">
               <p className={styles.category}>Manage</p>
