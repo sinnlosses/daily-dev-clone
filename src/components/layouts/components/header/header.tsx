@@ -1,8 +1,8 @@
+import { useHeader } from "@/components/layouts/components/header/hooks/use-header"
 import { PresentationalHeader } from "@/components/layouts/components/header/presentational-header"
-import { useConfig } from "@/hooks"
 
 export const Header = () => {
-  const { assets } = useConfig()
+  const useHeaderReturnType = useHeader()
 
-  return <PresentationalHeader logoPath={assets.headerLogoPath} />
+  return <PresentationalHeader {...useHeaderReturnType} />
 }
