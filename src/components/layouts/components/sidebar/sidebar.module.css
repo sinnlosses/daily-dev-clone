@@ -4,8 +4,9 @@
   left: 0;
   bottom: 0;
   width: 240px;
+  background-color: inherit;
   border-right: solid 1px var(--divider-tertiary);
-  z-index: 7;
+  z-index: 3;
 }
 
 .contents {
@@ -24,13 +25,29 @@
 }
 
 .closeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 50px;
-  right: -10px;
-  width: 20px;
-  height: 20px;
-  background-color: blue;
-  z-index: -3;
+  top: 10px;
+  right: 0;
+  transform: translateX(50%);
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: var(--theme-background-reverse);
+  border: none;
+  border-radius: 5px;
+  z-index: 3;
+  visibility: hidden;
+}
+
+.sidebar:hover > .closeButton {
+  visibility: visible;
+}
+
+.closeButton:hover {
+  background-color: var(--theme-background-reverse-hover);
 }
 
 .category {

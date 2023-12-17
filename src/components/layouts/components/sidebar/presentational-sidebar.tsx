@@ -1,5 +1,5 @@
 import { HStack } from "@/components/ui/hstack"
-import { GearIcon } from "@/components/ui/icons"
+import { ChevronLeft, GearIcon } from "@/components/ui/icons"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
 import { UseCustomizeModalReturnType } from "@/features/modal/customize-modal/hooks/use-customize-modal"
@@ -10,7 +10,9 @@ type SidebarProps = UseCustomizeModalReturnType
 export const PresentationalSidebar = ({ showModal }: SidebarProps) => {
   return (
     <aside className={styles.sidebar}>
-      <button onClick={() => console.log("OK")} className={styles.closeButton}></button>
+      <button onClick={() => console.log("OK")} className={styles.closeButton}>
+        <ChevronLeft />
+      </button>
       <VStack gap="l" className={styles.contents}>
         {Array.from(Array(10)).map((_, index) => {
           return (

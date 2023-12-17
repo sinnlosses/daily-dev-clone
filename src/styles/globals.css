@@ -5,11 +5,11 @@
     "Courier New", monospace;
 
   --font-size-root: 16px;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-s: 0.8125rem; /* 13px */
   --font-size-xs: 0.75rem; /* 12px */
+  --font-size-s: 0.8125rem; /* 13px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
 
   --spacing-xxs: 4px;
   --spacing-xs: 8px;
@@ -41,6 +41,8 @@
 :root[data-theme="light"] {
   --theme-primary: #000;
   --theme-background: #fff;
+  --theme-background-reverse: #0e1117;
+  --theme-background-reverse-hover: #0e111766;
   --button-default-color: #525866;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf66;
@@ -53,6 +55,8 @@
 :root[data-theme="dark"] {
   --theme-primary: #fff;
   --theme-background: #0e1217;
+  --theme-background-reverse: #fff;
+  --theme-background-reverse-hover: #a8b3cf;
   --button-default-color: #a8b3cf;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf;
