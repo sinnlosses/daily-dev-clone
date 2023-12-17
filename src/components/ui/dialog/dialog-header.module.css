@@ -5,7 +5,7 @@
 }
 
 .dialogTitle {
-  color: #fff;
+  color: var(--font-color-primary);
   font-size: 20px;
   font-weight: bold;
 }

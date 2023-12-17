@@ -41,11 +41,12 @@
 :root[data-theme="light"] {
   --theme-primary: #000;
   --theme-background: #fff;
-  --button-default-color: #a8b3cf66;
+  --button-default-color: #525866;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf66;
   --font-color-primary: #000;
-  --font-color-secondary: #a8b3cf66;
+  --font-color-secondary: #525866;
+  --font-color-tertiary: #525866a3;
   --border-color-primary: #a8b3cf;
 }
 
@@ -57,7 +58,8 @@
   --link-default-color: #a8b3cf;
   --font-color-primary: #fff;
   --font-color-secondary: #a8b3cf;
-  --border-color-primary: #a8b3cf;
+  --font-color-tertiary: #a8b3cf66;
+  --border-color-primary: #a8b3cf66;
 }
 
 * {

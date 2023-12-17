@@ -20,7 +20,7 @@
 
 .category {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--font-color-secondary);
   padding-left: var(--spacing-s);
 }
@@ -35,6 +35,5 @@
 }
 
 .item:hover {
-  color: #fff;
   background-color: var(--button-default-color-hover);
 }

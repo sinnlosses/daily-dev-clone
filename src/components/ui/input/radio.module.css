@@ -1,5 +1,6 @@
 .radioItem {
   cursor: pointer;
+  color: var(--font-color-secondary);
 }
 
 .radioInput {
@@ -21,5 +22,8 @@
   cursor: inherit;
   font-size: 13px;
   font-weight: bold;
-  color: var(--font-color-secondary);
+}
+
+.radioInput:checked + .radioLabel {
+  color: var(--font-color-primary);
 }
