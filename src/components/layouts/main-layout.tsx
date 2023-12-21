@@ -1,8 +1,5 @@
 "use client"
-import { Header } from "@/components/layouts/components/header"
-import { Sidebar } from "@/components/layouts/components/sidebar"
-import { HStack } from "@/components/ui/hstack"
-import { WhenVisible } from "@/components/ui/when-visible"
+import { AppContent } from "@/components/layouts/components/app-content"
 import { AppProvider } from "@/providers"
 import clsx from "clsx"
 import { Inter } from "next/font/google"
@@ -16,13 +13,7 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
     <html lang="ja">
       <body className={clsx(inter.className, styles.body)}>
         <AppProvider>
-          <Header />
-          <HStack className={styles.mainContainer}>
-            <WhenVisible desktop>
-              <Sidebar />
-            </WhenVisible>
-            <main className={styles.main}>{children}</main>
-          </HStack>
+          <AppContent>{children}</AppContent>
         </AppProvider>
       </body>
     </html>

@@ -1,0 +1,24 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  transition: padding-left 0.3s;
+}
+
+.mainContainerNarrow {
+  padding-left: 240px;
+}
+
+.mainContainerWide {
+  padding-left: 45px;
+}
+
+.main {
+  position: relative;
+  left: 0;
+  padding: var(--spacing-xl) var(--spacing-m);
+  z-index: -10;
+
+  @media screen and (min-width: 1020px) {
+    padding: var(--spacing-xl) var(--spacing-4xl);
+  }
+}

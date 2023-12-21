@@ -18,8 +18,6 @@ export const useDialog = () => {
       if (!dialogElement.hasAttribute("open")) return
       ref.current.close()
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   const showModal = useCallback(
