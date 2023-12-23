@@ -3,5 +3,6 @@ import { PresentationalSidebar } from "./presentational-sidebar"
 
 export const Sidebar = () => {
   const useSidebarReturnType = useSidebar()
+
   return <PresentationalSidebar {...useSidebarReturnType} />
 }

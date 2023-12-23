@@ -1,19 +1,13 @@
 import { SidebarStateContextType } from "@/providers/sidebar-state"
-import { useCallback, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 
 export type UseSidebarStateReturnType = {
   context: SidebarStateContextType
 }
 
 export function useSidebarStateProvider(): UseSidebarStateReturnType {
-  const [isExpandedForDesktop, _setIsExpandedForDesktop] = useState(false)
-  const [isExpandedForMobile, _setIsExpandedForMobile] = useState(false)
-
-  const setIsExpandedForDesktop = useCallback(
-    (value: boolean) => _setIsExpandedForDesktop(value),
-    []
-  )
-  const setIsExpandedForMobile = useCallback((value: boolean) => _setIsExpandedForMobile(value), [])
+  const [isExpandedForDesktop, setIsExpandedForDesktop] = useState(true)
+  const [isExpandedForMobile, setIsExpandedForMobile] = useState(false)
 
   const context = useMemo<SidebarStateContextType>(
     () => ({

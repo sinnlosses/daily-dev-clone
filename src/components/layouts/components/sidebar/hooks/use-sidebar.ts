@@ -2,19 +2,17 @@ import {
   UseCustomizeModalReturnType,
   useCustomizeModal,
 } from "@/features/modal/customize-modal/hooks/use-customize-modal"
-import { Dispatch, SetStateAction, useState } from "react"
-
-type UseSidebarProps = {
-  initIsExpanded?: boolean
-}
+import { useSidebarState } from "@/hooks/sidebar-state/use-sidebar-state"
+import { Dispatch, SetStateAction } from "react"
 
 export type UseSidebarReturnType = UseCustomizeModalReturnType & {
-  isExpanded: boolean
-  setIsExpanded: Dispatch<SetStateAction<boolean>>
+  isExpandedForDesktop: boolean
+  setIsExpandedForDesktop: Dispatch<SetStateAction<boolean>>
 }
 
-export function useSidebar({ initIsExpanded }: UseSidebarProps): UseSidebarReturnType {
+export function useSidebar(): UseSidebarReturnType {
   const useCustomizeModalReturnType = useCustomizeModal()
-  const [isExpanded, setIsExpanded] = useState(true)
-  return { ...useCustomizeModalReturnType, isExpanded, setIsExpanded }
+  const { isExpandedForDesktop, setIsExpandedForDesktop } = useSidebarState()
+  console.log(`isExpanded: ${isExpandedForDesktop}`)
+  return { ...useCustomizeModalReturnType, isExpandedForDesktop, setIsExpandedForDesktop }
 }

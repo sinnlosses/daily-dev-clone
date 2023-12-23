@@ -1,13 +1,10 @@
-import {
-  UseSidebarReturnType,
-  useSidebar,
-} from "@/components/layouts/components/sidebar/hooks/use-sidebar"
-import { UseDeviceReturn, useDevice } from "@/hooks/device/use-device"
+import { UseDeviceReturnType, useDevice } from "@/hooks/device/use-device"
+import { UseSidebarStateReturnType, useSidebarState } from "@/hooks/sidebar-state/use-sidebar-state"
 
-type UseAppContentReturnType = UseSidebarReturnType & UseDeviceReturn
+type UseAppContentReturnType = UseSidebarStateReturnType & UseDeviceReturnType
 
 export function useAppContent(): UseAppContentReturnType {
   const useDeviceReturn = useDevice()
-  const useSidebarReturn = useSidebar({ initIsExpanded: useDeviceReturn.isDesktop })
-  return { ...useSidebarReturn, ...useDeviceReturn }
+  const useSidebarStateReturn = useSidebarState()
+  return { ...useDeviceReturn, ...useSidebarStateReturn }
 }

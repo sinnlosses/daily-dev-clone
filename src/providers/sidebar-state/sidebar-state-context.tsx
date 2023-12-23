@@ -1,10 +1,10 @@
-import { createContext } from "react"
+import { Dispatch, SetStateAction, createContext } from "react"
 
 export type SidebarStateContextType = {
   isExpandedForDesktop: boolean
-  setIsExpandedForDesktop: (value: boolean) => void
+  setIsExpandedForDesktop: Dispatch<SetStateAction<boolean>>
   isExpandedForMobile: boolean
-  setIsExpandedForMobile: (value: boolean) => void
+  setIsExpandedForMobile: Dispatch<SetStateAction<boolean>>
 }
 
 export const SidebarStateContext = createContext<SidebarStateContextType>({

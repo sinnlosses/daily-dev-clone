@@ -1,11 +1,9 @@
-import { DeviceContext } from "@/providers/device"
+import { DeviceContext, DeviceContextType } from "@/providers/device"
 import { useContext } from "react"
 
-export type UseDeviceReturn = {
-  isDesktop: boolean
-  isMobile: boolean
-}
-export function useDevice(): UseDeviceReturn {
+export type UseDeviceReturnType = DeviceContextType
+
+export function useDevice(): UseDeviceReturnType {
   const useDeviceReturn = useContext(DeviceContext)
   return { ...useDeviceReturn }
 }

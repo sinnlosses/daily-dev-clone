@@ -10,26 +10,36 @@ import styles from "./sidebar.module.css"
 type PresentationalSidebarProps = UseSidebarReturnType
 
 export const PresentationalSidebar = ({
-  isExpanded,
-  setIsExpanded,
+  isExpandedForDesktop,
+  setIsExpandedForDesktop,
   showCustomizeModal: showModal,
 }: PresentationalSidebarProps) => {
   return (
-    <aside className={clsx(styles.sidebar, isExpanded ? styles.sidebarWide : styles.sidebarNarrow)}>
-      <button onClick={() => setIsExpanded((prev) => !prev)} className={styles.closeButton}>
-        {isExpanded ? <ChevronLeft /> : <ChevronRight />}
+    <aside
+      className={clsx(
+        styles.sidebar,
+        isExpandedForDesktop ? styles.sidebarWide : styles.sidebarNarrow
+      )}
+    >
+      <button
+        onClick={() => setIsExpandedForDesktop((prev) => !prev)}
+        className={styles.closeButton}
+      >
+        {isExpandedForDesktop ? <ChevronLeft /> : <ChevronRight />}
       </button>
       <VStack gap="l" className={styles.contents}>
         {Array.from(Array(10)).map((_, index) => {
           return (
             <VStack key={index} gap="s">
-              <p className={clsx(styles.category, !isExpanded && styles.hidden)}>Manage</p>
+              <p className={clsx(styles.category, !isExpandedForDesktop && styles.hidden)}>
+                Manage
+              </p>
               <button className={styles.item} onClick={showModal}>
                 <HStack alignItems="center" paddingLeft="s" gap="s">
                   <StackItem noShrink>
                     <GearIcon />
                   </StackItem>
-                  <Text className={clsx(!isExpanded && styles.hidden)}>Customize</Text>
+                  <Text className={clsx(!isExpandedForDesktop && styles.hidden)}>Customize</Text>
                 </HStack>
               </button>
             </VStack>
