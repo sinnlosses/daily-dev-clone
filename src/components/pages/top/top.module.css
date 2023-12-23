@@ -1,0 +1,9 @@
+.main {
+  position: relative;
+  left: 0;
+  padding: var(--spacing-xl) var(--spacing-m);
+
+  @media screen and (min-width: 1020px) {
+    padding: var(--spacing-xl) var(--spacing-4xl);
+  }
+}

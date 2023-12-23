@@ -5,12 +5,13 @@ import styles from "./stack-item.module.css"
 type StackItemProps = PropsWithChildren<{
   flexGrow?: boolean
   noShrink?: boolean
+  className?: string
 }>
 
-export function StackItem(props: StackItemProps) {
+export function StackItem({ flexGrow, noShrink, className, children }: StackItemProps) {
   return (
-    <div className={clsx(props.flexGrow && styles.grow, props.noShrink && styles.noShrink)}>
-      {props.children}
+    <div className={clsx(flexGrow && styles.grow, noShrink && styles.noShrink, className)}>
+      {children}
     </div>
   )
 }

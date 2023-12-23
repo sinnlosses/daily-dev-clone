@@ -43,6 +43,7 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
+  color: var(--font-color-reverse);
   background-color: var(--theme-background-reverse);
   border: none;
   border-radius: 5px;

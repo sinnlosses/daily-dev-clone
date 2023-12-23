@@ -1,27 +1,29 @@
+import { useAppContent } from "@/components/layouts/components/app-content/hooks/use-app-content"
 import { Header } from "@/components/layouts/components/header"
-import { useSidebar } from "@/components/layouts/components/sidebar/hooks/use-sidebar"
 import { PresentationalSidebar } from "@/components/layouts/components/sidebar/presentational-sidebar"
 import { HStack } from "@/components/ui/hstack"
-import { WhenVisible } from "@/components/ui/when-visible"
+import { StackItem } from "@/components/ui/stack-item"
 import clsx from "clsx"
 import { PropsWithChildren } from "react"
 import styles from "./app-content.module.css"
 
 export const AppContent = ({ children }: PropsWithChildren) => {
-  const { isExpanded, ...useSidebarReturn } = useSidebar()
+  const { isExpanded, isDesktop, setIsExpanded, showModal } = useAppContent()
+  console.log(isExpanded)
   return (
     <>
       <Header />
-      <HStack
-        className={clsx(
-          styles.mainContainer,
-          isExpanded ? styles.mainContainerNarrow : styles.mainContainerWide
+      <HStack>
+        {isDesktop && (
+          <PresentationalSidebar
+            isExpanded={isExpanded}
+            setIsExpanded={setIsExpanded}
+            showModal={showModal}
+          />
         )}
-      >
-        <WhenVisible desktop>
-          <PresentationalSidebar isExpanded={isExpanded} {...useSidebarReturn} />
-        </WhenVisible>
-        <main className={styles.main}>{children}</main>
+        <StackItem flexGrow className={clsx(isExpanded ? styles.narrow : styles.wide)}>
+          {children}
+        </StackItem>
       </HStack>
     </>
   )
