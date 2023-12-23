@@ -12,7 +12,7 @@ type PresentationalSidebarProps = UseSidebarReturnType
 export const PresentationalSidebar = ({
   isExpanded,
   setIsExpanded,
-  showModal,
+  showCustomizeModal: showModal,
 }: PresentationalSidebarProps) => {
   return (
     <aside className={clsx(styles.sidebar, isExpanded ? styles.sidebarWide : styles.sidebarNarrow)}>

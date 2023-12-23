@@ -1,5 +1,5 @@
+import { useModalProvider } from "@/providers/modal/hooks/use-modal-provider"
 import { ModalContext } from "@/providers/modal/modal-context"
-import { useModalProvider } from "@/providers/modal/use-modal-provider"
 import { PropsWithChildren } from "react"
 
 export const ModalProvider = ({ children }: PropsWithChildren) => {

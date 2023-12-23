@@ -1,16 +1,16 @@
 import { CustomizeModal } from "@/features/modal/customize-modal"
-import { useDialog } from "@/hooks/use-dialog"
+import { useDialog } from "@/hooks/modal/use-dialog"
 
 export type UseCustomizeModalReturnType = {
-  showModal: () => void
+  showCustomizeModal: () => void
 }
 
 export function useCustomizeModal(): UseCustomizeModalReturnType {
-  const { ref, showModal: _showModal, closeModal } = useDialog()
+  const { ref, showModal, closeModal } = useDialog()
 
-  const showModal = () => {
-    _showModal(() => <CustomizeModal ref={ref} onClose={closeModal} />)
+  const showCustomizeModal = () => {
+    showModal(() => <CustomizeModal ref={ref} onClose={closeModal} />)
   }
 
-  return { showModal }
+  return { showCustomizeModal }
 }

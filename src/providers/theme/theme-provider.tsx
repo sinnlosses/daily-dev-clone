@@ -1,9 +1,9 @@
 "use client"
+import { useThemeProvider } from "@/providers/theme/hooks/use-theme-provider"
 import { Theme, ThemeContext } from "@/providers/theme/theme-context"
-import { useThemeProvider } from "@/providers/theme/use-theme-provider"
 import { PropsWithChildren, useEffect } from "react"
 
-export function ThemeProvider(props: PropsWithChildren) {
+export function ThemeProvider({ children }: PropsWithChildren) {
   const { context, getThemeFromLocalStorage, setTheme } = useThemeProvider()
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export function ThemeProvider(props: PropsWithChildren) {
           }();`,
         }}
       />
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   )
 }

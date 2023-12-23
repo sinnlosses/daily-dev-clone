@@ -8,8 +8,7 @@ import { PropsWithChildren } from "react"
 import styles from "./app-content.module.css"
 
 export const AppContent = ({ children }: PropsWithChildren) => {
-  const { isExpanded, isDesktop, setIsExpanded, showModal } = useAppContent()
-  console.log(isExpanded)
+  const { isExpanded, isDesktop, setIsExpanded, showCustomizeModal: showModal } = useAppContent()
   return (
     <>
       <Header />
@@ -18,7 +17,7 @@ export const AppContent = ({ children }: PropsWithChildren) => {
           <PresentationalSidebar
             isExpanded={isExpanded}
             setIsExpanded={setIsExpanded}
-            showModal={showModal}
+            showCustomizeModal={showModal}
           />
         )}
         <StackItem flexGrow className={clsx(isExpanded ? styles.narrow : styles.wide)}>

@@ -1,3 +1,4 @@
+import { DeviceProvider } from "@/providers/device"
 import { ModalProvider } from "@/providers/modal/modal-provider"
 import { PropsWithChildren } from "react"
 import { ThemeProvider } from "./theme/theme-provider"
@@ -10,7 +11,9 @@ export function AppProvider(props: AppProviderProps) {
     <>
       <ToasterProvider />
       <ThemeProvider>
-        <ModalProvider>{props.children}</ModalProvider>
+        <ModalProvider>
+          <DeviceProvider>{props.children}</DeviceProvider>
+        </ModalProvider>
       </ThemeProvider>
     </>
   )
