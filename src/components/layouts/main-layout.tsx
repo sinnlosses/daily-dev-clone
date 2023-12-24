@@ -1,5 +1,5 @@
 "use client"
-import { AppContent } from "@/components/layouts/components/app-content"
+import { AppLayout } from "@/components/layouts/components/app-layout"
 import { AppProvider } from "@/providers"
 import clsx from "clsx"
 import { Inter } from "next/font/google"
@@ -13,7 +13,7 @@ export const MainLayout = ({ children }: PropsWithChildren) => {
     <html lang="ja">
       <body className={clsx(inter.className, styles.body)}>
         <AppProvider>
-          <AppContent>{children}</AppContent>
+          <AppLayout>{children}</AppLayout>
         </AppProvider>
       </body>
     </html>

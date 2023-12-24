@@ -1,8 +1,8 @@
-import { DeviceProvider } from "@/providers/device"
-import { ModalProvider } from "@/providers/modal/modal-provider"
-import { SidebarStateProvider } from "@/providers/sidebar-state"
+import { DeviceProvider } from "@/concerns/device"
+import { ModalProvider } from "@/concerns/modal/providers/modal-provider"
+import { SidebarStateProvider } from "@/concerns/sidebar-state"
 import { PropsWithChildren } from "react"
-import { ThemeProvider } from "./theme/theme-provider"
+import { ThemeProvider } from "../concerns/theme/providers/theme-provider"
 import { ToasterProvider } from "./toaster/toaster-provider"
 
 type AppProviderProps = PropsWithChildren
