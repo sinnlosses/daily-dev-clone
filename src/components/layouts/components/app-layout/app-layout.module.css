@@ -9,3 +9,7 @@
 .desktopSidebarCollapsed {
   width: 45px;
 }
+
+.mobileSidebar {
+  width: 280px;
+}

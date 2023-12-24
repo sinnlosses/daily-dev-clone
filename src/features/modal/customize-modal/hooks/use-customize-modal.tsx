@@ -1,5 +1,5 @@
-import { CustomizeModal } from "@/components/domain/modal/customize-modal"
 import { useDialog } from "@/concerns/modal/hooks/use-dialog"
+import { CustomizeModal } from "@/features/modal/customize-modal"
 
 export type UseCustomizeModalReturnType = {
   showCustomizeModal: () => void

@@ -1,19 +1,19 @@
-import { UseSidebarReturnType } from "@/components/domain/sidebar/hooks/use-sidebar"
 import { HStack } from "@/components/ui/hstack"
 import { ChevronLeft, ChevronRight, GearIcon } from "@/components/ui/icons"
 import { StackItem } from "@/components/ui/stack-item"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
+import { UseSidebarReturnType } from "@/features/sidebar/desktop-sidebar/hooks/use-desktop-sidebar"
 import clsx from "clsx"
 import styles from "./desktop-sidebar.module.css"
 
-type PresentationalSidebarProps = UseSidebarReturnType
+type PresentationalMobileSidebarProps = UseSidebarReturnType
 
-export const PresentationalSidebar = ({
+export const PresentationalMobileSidebar = ({
   desktopSidebarIsExpanded,
   setDesktopSideberIsExpanded,
   showCustomizeModal: showModal,
-}: PresentationalSidebarProps) => {
+}: PresentationalMobileSidebarProps) => {
   return (
     <aside className={clsx(styles.sidebar)}>
       <button
@@ -47,4 +47,4 @@ export const PresentationalSidebar = ({
   )
 }
 
-PresentationalSidebar.displayName = "PresentationalSidebar"
+PresentationalMobileSidebar.displayName = "PresentationalSidebar"

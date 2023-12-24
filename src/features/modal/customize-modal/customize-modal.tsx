@@ -1,5 +1,5 @@
-import { PresentationalCustomizeModal } from "@/components/domain/modal/customize-modal/presentational-customize-modal"
 import { useTheme } from "@/concerns/theme/hooks/use-theme"
+import { PresentationalCustomizeModal } from "@/features/modal/customize-modal/presentational-customize-modal"
 import { FC, Ref, forwardRef } from "react"
 
 type CustomizeModalProps = {

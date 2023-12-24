@@ -1,0 +1,12 @@
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-xxs);
+
+  @media screen and (min-width: 1020px) {
+    position: static;
+    transform: translateX(0);
+  }
+}

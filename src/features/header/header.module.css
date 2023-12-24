@@ -1,0 +1,18 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: var(--length-xxxl);
+  width: 100%;
+  z-index: 4;
+  border-bottom: solid var(--divider-tertiary);
+  background-color: inherit;
+  padding: var(--spacing-xs) var(--spacing-s);
+
+  @media screen and (min-width: 1020px) {
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+  }
+}

@@ -1,8 +1,8 @@
+import { useSidebarState } from "@/concerns/sidebar-state/hooks/use-sidebar-state"
 import {
   UseCustomizeModalReturnType,
   useCustomizeModal,
-} from "@/components/domain/modal/customize-modal/hooks/use-customize-modal"
-import { useSidebarState } from "@/concerns/sidebar-state/hooks/use-sidebar-state"
+} from "@/features/modal/customize-modal/hooks/use-customize-modal"
 import { Dispatch, SetStateAction } from "react"
 
 export type UseSidebarReturnType = UseCustomizeModalReturnType & {
@@ -10,7 +10,7 @@ export type UseSidebarReturnType = UseCustomizeModalReturnType & {
   setDesktopSideberIsExpanded: Dispatch<SetStateAction<boolean>>
 }
 
-export function useSidebar(): UseSidebarReturnType {
+export function useDesktopSidebar(): UseSidebarReturnType {
   const useCustomizeModalReturnType = useCustomizeModal()
   const { desktopSidebarIsExpanded, setDesktopSideberIsExpanded } = useSidebarState()
 

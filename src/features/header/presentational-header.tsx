@@ -1,7 +1,6 @@
-import { HamburgerIcon } from "@/components/ui/icons"
 import { WhenVisible } from "@/components/ui/when-visible"
-import Image from "next/image"
-import Link from "next/link"
+import { Logo } from "@/features/header/components/logo"
+import { MenuButton } from "@/features/header/components/menuButton"
 import styles from "./header.module.css"
 import { UseHeaderReturnType } from "./hooks/use-header"
 
@@ -12,13 +11,9 @@ export const PresentationalHeader = ({ headerLogoPath }: PresentationalHeaderPro
     <header className={styles.header}>
       {/* useMediaQuery を使用するとSSR時の初回HTMLから useEffect によって状態が変化した場合に画面がちらつくため、CSSによる制御を採用している */}
       <WhenVisible mobile>
-        <button className={styles.button}>
-          <HamburgerIcon />
-        </button>
+        <MenuButton />
       </WhenVisible>
-      <Link href={"/"} className={styles.link}>
-        <Image src={headerLogoPath} width={100} height={30} alt="logo" priority />
-      </Link>
+      <Logo logoPath={headerLogoPath} />
     </header>
   )
 }
