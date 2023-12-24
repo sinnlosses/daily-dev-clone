@@ -3,18 +3,10 @@
   top: var(--length-xxxl);
   left: 0;
   bottom: 0;
+  width: inherit;
   background-color: inherit;
   border-right: solid 1px var(--divider-tertiary);
   z-index: 3;
-  transition: width 0.3s;
-}
-
-.sidebarNarrow {
-  width: 45px;
-}
-
-.sidebarWide {
-  width: 240px;
 }
 
 .contents {

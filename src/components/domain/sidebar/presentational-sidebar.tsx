@@ -5,33 +5,28 @@ import { StackItem } from "@/components/ui/stack-item"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
 import clsx from "clsx"
-import styles from "./sidebar.module.css"
+import styles from "./desktop-sidebar.module.css"
 
 type PresentationalSidebarProps = UseSidebarReturnType
 
 export const PresentationalSidebar = ({
-  isExpandedForDesktop,
-  setIsExpandedForDesktop,
+  desktopSidebarIsExpanded,
+  setDesktopSideberIsExpanded,
   showCustomizeModal: showModal,
 }: PresentationalSidebarProps) => {
   return (
-    <aside
-      className={clsx(
-        styles.sidebar,
-        isExpandedForDesktop ? styles.sidebarWide : styles.sidebarNarrow
-      )}
-    >
+    <aside className={clsx(styles.sidebar)}>
       <button
-        onClick={() => setIsExpandedForDesktop((prev) => !prev)}
+        onClick={() => setDesktopSideberIsExpanded((prev) => !prev)}
         className={styles.closeButton}
       >
-        {isExpandedForDesktop ? <ChevronLeft /> : <ChevronRight />}
+        {desktopSidebarIsExpanded ? <ChevronLeft /> : <ChevronRight />}
       </button>
       <VStack gap="l" className={styles.contents}>
         {Array.from(Array(10)).map((_, index) => {
           return (
             <VStack key={index} gap="s">
-              <p className={clsx(styles.category, !isExpandedForDesktop && styles.hidden)}>
+              <p className={clsx(styles.category, !desktopSidebarIsExpanded && styles.hidden)}>
                 Manage
               </p>
               <button className={styles.item} onClick={showModal}>
@@ -39,7 +34,9 @@ export const PresentationalSidebar = ({
                   <StackItem noShrink>
                     <GearIcon />
                   </StackItem>
-                  <Text className={clsx(!isExpandedForDesktop && styles.hidden)}>Customize</Text>
+                  <Text className={clsx(!desktopSidebarIsExpanded && styles.hidden)}>
+                    Customize
+                  </Text>
                 </HStack>
               </button>
             </VStack>

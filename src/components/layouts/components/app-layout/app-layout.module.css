@@ -1,12 +1,11 @@
-.narrow {
-  @media screen and (min-width: 1020px) {
-    padding-left: 240px;
-  }
+.desktopSidebar {
+  transition: width 0.3s;
 }
 
-.wide {
-  @media screen and (min-width: 1020px) {
-    padding-left: 45px;
-    transition: padding-left 0.3s;
-  }
+.desktopSidebarExpanded {
+  width: 240px;
+}
+
+.desktopSidebarCollapsed {
+  width: 45px;
 }
