@@ -1,4 +1,5 @@
 import { ModalContext } from "@/concerns/modal/contexts/modal-context"
+import { loggerInfo } from "@/lib"
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 
 export const useDialog = () => {
@@ -18,6 +19,7 @@ export const useDialog = () => {
       if (!dialogElement.hasAttribute("open")) return
       ref.current.close()
     }
+    loggerInfo(`isOpen: ${dialogElement.hasAttribute("open")}`)
   }, [isOpen])
 
   const showModal = useCallback(

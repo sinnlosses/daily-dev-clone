@@ -3,7 +3,7 @@ import { useContext } from "react"
 
 export type UseSidebarStateReturnType = SidebarStateContextType
 
-export function useSidebarState() {
+export function useSidebarState(): UseSidebarStateReturnType {
   const useSidebarStateReturn = useContext(SidebarStateContext)
   return { ...useSidebarStateReturn }
 }

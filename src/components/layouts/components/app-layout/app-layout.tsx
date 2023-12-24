@@ -2,7 +2,7 @@ import { useAppLayout } from "@/components/layouts/components/app-layout/hooks/u
 import { HStack } from "@/components/ui/hstack"
 import { StackItem } from "@/components/ui/stack-item"
 import { Header } from "@/features/header"
-import { DesktopSidebar, MobileSidebar } from "@/features/sidebar"
+import { DesktopSidebar } from "@/features/sidebar"
 import clsx from "clsx"
 import { PropsWithChildren } from "react"
 import styles from "./app-layout.module.css"
@@ -14,7 +14,7 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
     <>
       <Header />
       <HStack>
-        {isDesktop ? (
+        {isDesktop && (
           <div
             className={clsx(
               styles.desktopSidebar,
@@ -24,10 +24,6 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
             )}
           >
             <DesktopSidebar />
-          </div>
-        ) : (
-          <div className={styles.mobideSidebar}>
-            <MobileSidebar />
           </div>
         )}
         <StackItem flexGrow>{children}</StackItem>

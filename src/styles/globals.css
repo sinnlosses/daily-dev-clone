@@ -43,6 +43,7 @@
   --theme-background: #fff;
   --theme-background-reverse: #0e1117;
   --theme-background-reverse-hover: #0e1217a3;
+  --theme-dialog-backdrop: #5f37e93d;
   --button-default-color: #525866;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf66;
@@ -58,6 +59,7 @@
   --theme-background: #0e1217;
   --theme-background-reverse: #fff;
   --theme-background-reverse-hover: #a8b3cf;
+  --theme-dialog-backdrop: #5f37e93d;
   --button-default-color: #a8b3cf;
   --button-default-color-hover: #a8b3cf33;
   --link-default-color: #a8b3cf;
@@ -66,6 +68,11 @@
   --font-color-tertiary: #a8b3cf66;
   --font-color-reverse: #0e1217;
   --border-color-primary: #a8b3cf66;
+}
+
+::backdrop {
+  /* ダイアログ用 */
+  --theme-dialog-backdrop: #5f37e93d;
 }
 
 * {

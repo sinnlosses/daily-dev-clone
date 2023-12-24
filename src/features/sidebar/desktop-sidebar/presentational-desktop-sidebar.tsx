@@ -3,11 +3,11 @@ import { ChevronLeft, ChevronRight, GearIcon } from "@/components/ui/icons"
 import { StackItem } from "@/components/ui/stack-item"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
-import { UseSidebarReturnType } from "@/features/sidebar/desktop-sidebar/hooks/use-desktop-sidebar"
+import { UseDesktopSidebarReturnType } from "@/features/sidebar/desktop-sidebar/hooks/use-desktop-sidebar"
 import clsx from "clsx"
 import styles from "./desktop-sidebar.module.css"
 
-type PresentationalDesktopSidebarProps = UseSidebarReturnType
+type PresentationalDesktopSidebarProps = UseDesktopSidebarReturnType
 
 export const PresentationalDesktopSidebar = ({
   desktopSidebarIsExpanded,

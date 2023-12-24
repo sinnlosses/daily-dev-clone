@@ -14,7 +14,7 @@
 }
 
 .dialog::backdrop {
-  background: #5f37e93d;
+  background-color: var(--theme-dialog-backdrop);
 }
 
 .dialogInner {

@@ -4,12 +4,12 @@ export type SidebarStateContextType = {
   desktopSidebarIsExpanded: boolean
   setDesktopSideberIsExpanded: Dispatch<SetStateAction<boolean>>
   mobileSidebarIsExpanded: boolean
-  setmobileSidebarIsExpanded: Dispatch<SetStateAction<boolean>>
+  setMobileSidebarIsExpanded: Dispatch<SetStateAction<boolean>>
 }
 
 export const SidebarStateContext = createContext<SidebarStateContextType>({
   desktopSidebarIsExpanded: false,
   setDesktopSideberIsExpanded: () => undefined,
   mobileSidebarIsExpanded: false,
-  setmobileSidebarIsExpanded: () => undefined,
+  setMobileSidebarIsExpanded: () => undefined,
 })

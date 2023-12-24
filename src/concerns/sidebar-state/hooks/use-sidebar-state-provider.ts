@@ -1,11 +1,11 @@
 import { SidebarStateContextType } from "@/concerns/sidebar-state"
 import { useMemo, useState } from "react"
 
-export type UseSidebarStateReturnType = {
+export type UseSidebarStateProviderReturnType = {
   context: SidebarStateContextType
 }
 
-export function useSidebarStateProvider(): UseSidebarStateReturnType {
+export function useSidebarStateProvider(): UseSidebarStateProviderReturnType {
   const [desktopSidebarIsExpanded, setDesktopSideberIsExpanded] = useState(true)
   const [mobileSidebarIsExpanded, setmobileSidebarIsExpanded] = useState(false)
 
@@ -14,7 +14,7 @@ export function useSidebarStateProvider(): UseSidebarStateReturnType {
       desktopSidebarIsExpanded,
       setDesktopSideberIsExpanded,
       mobileSidebarIsExpanded,
-      setmobileSidebarIsExpanded,
+      setMobileSidebarIsExpanded: setmobileSidebarIsExpanded,
     }),
     [desktopSidebarIsExpanded, mobileSidebarIsExpanded]
   )

@@ -1,8 +1,13 @@
-import { useConfig } from "@/hooks"
+import {
+  UseSidebarStateReturnType,
+  useSidebarState,
+} from "@/concerns/sidebar-state/hooks/use-sidebar-state"
+import { UseConfigReturnType, useConfig } from "@/hooks"
 
-export type UseHeaderReturnType = { headerLogoPath: string }
+export type UseHeaderReturnType = UseConfigReturnType & UseSidebarStateReturnType
 
 export function useHeader(): UseHeaderReturnType {
-  const { assets } = useConfig()
-  return { ...assets }
+  const useConfigReturn = useConfig()
+  const useSidebarStateReturn = useSidebarState()
+  return { ...useConfigReturn, ...useSidebarStateReturn }
 }
