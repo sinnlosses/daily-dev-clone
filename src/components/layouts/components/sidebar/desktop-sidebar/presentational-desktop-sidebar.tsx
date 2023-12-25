@@ -1,9 +1,9 @@
+import { UseDesktopSidebarReturnType } from "@/components/layouts/components/sidebar/desktop-sidebar/hooks/use-desktop-sidebar"
 import { HStack } from "@/components/ui/hstack"
 import { ChevronLeft, ChevronRight, GearIcon } from "@/components/ui/icons"
 import { StackItem } from "@/components/ui/stack-item"
 import { Text } from "@/components/ui/text"
 import { VStack } from "@/components/ui/vstack"
-import { UseDesktopSidebarReturnType } from "@/features/sidebar/desktop-sidebar/hooks/use-desktop-sidebar"
 import clsx from "clsx"
 import styles from "./desktop-sidebar.module.css"
 

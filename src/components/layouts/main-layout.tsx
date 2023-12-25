@@ -1,5 +1,5 @@
 "use client"
-import { AppLayout } from "@/components/layouts/components/app-layout"
+import { AppLayout } from "@/components/layouts/app-layout"
 import { AppProvider } from "@/providers"
 import clsx from "clsx"
 import { Inter } from "next/font/google"

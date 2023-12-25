@@ -1,0 +1,25 @@
+.desktopSidebar {
+  transition:
+    width 0.3s,
+    transform 0.3s;
+}
+
+.desktopSidebarVisible {
+  transform: translateX(0);
+}
+
+.desktopSidebarHidden {
+  transform: translateX(-240px);
+}
+
+.desktopSidebarExpanded {
+  width: 240px;
+}
+
+.desktopSidebarCollapsed {
+  width: 45px;
+}
+
+.mobileSidebar {
+  width: 280px;
+}
